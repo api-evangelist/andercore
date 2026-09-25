@@ -1,23 +1,76 @@
 aid: andercore
+
 name: Andercore
-description: 'Andercore is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+
+image: https://cdn.prod.website-files.com/6953b66cfe49c7eee28420b2/6a99516a12b43d612c5bbfae_opengraph_english.png
+
+description: Andercore is a Europe‑based AI‑native supplier of industrial materials, operating a platform that unifies supply, demand, and capital
+  for global industrial trade. The company offers real‑time inventory access, dynamic pricing, managed logistics, and embedded financing, aiming
+  to replace fragmented manual processes with speed, transparency, and reliability across multiple languages and regions.
+
 url: https://raw.githubusercontent.com/api-evangelist/andercore/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-24 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-24'
+
 modified: '2026-09-24'
+
 tags:
-- Company
-apis: []
+- AI
+- Industrial Trade
+- Supply Chain
+- FinTech
+- Europe
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: LLMsTxt
+  url: llms/andercore-llms.txt
+- type: Hosts
+  url: hosts/andercore-hosts.yml
+- type: Vendors
+  url: vendors/andercore-vendors.yml
+- type: TermsOfService
+  url: https://www.andercore.com/terms
+- type: PrivacyPolicy
+  url: https://www.andercore.com/privacy
+- type: Newsroom
+  url: https://www.andercore.com/press/andercore-secures-40m-series-b-for-ai-driven-industrial-trade-platform
+- type: DomainSecurity
+  url: security/andercore-domain-security.yml
 - type: Website
-  url: https://equityzen.com/company/andercore
+  url: https://www.andercore.com
+
+apis:
+- name: Andercore API
+  description: API for Andercore's industrial trade platform
+  humanURL: https://www.andercore.com
+  aid: andercore:andercore-api
+
+x-coverage:
+  state: gated
+  reason: partner-login
+  detail: API endpoints require authentication, returning 401 for OpenAPI discovery attempts.
+  evidence:
+  - url: https://api.andercore.com/openapi.json
+    status: 401
+  checked: 2026-09-24
+x-enrichment:
+  date: '2026-09-24'
+  status: enriched
+  artifacts_added: 7
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local
